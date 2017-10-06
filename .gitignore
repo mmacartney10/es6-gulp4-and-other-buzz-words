@@ -1,6 +1,6 @@
 node_modules
 public
-./_client/styles/main.scss
+_client/styles/main.scss
 .DS_Store
 *.log
 tmp
