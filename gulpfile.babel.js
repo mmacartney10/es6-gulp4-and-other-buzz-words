@@ -14,5 +14,5 @@ export function watch() {
 
 const build = gulp.series(mainScripts, vendorScripts, svg, sassGenerateContents, styles, copyFonts);
 
-gulp.task('dev', build, watch);
-gulp.task('default', gulp.series(build));
+gulp.task('dev', gulp.series(build, watch));
+gulp.task('default', build);
