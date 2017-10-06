@@ -1,0 +1,16 @@
+// Variables for fonts
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('/fonts/HelveticaNeue.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/HelveticaNeue.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/HelveticaNeue.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/HelveticaNeue.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/HelveticaNeue.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$f-helvetica: 'HelveticaNeue', sans-serif;
+
+$f-heading: normal 700 16px/1.2 $f-helvetica;
+$f-body: normal 400 14px/1.4 $f-helvetica;

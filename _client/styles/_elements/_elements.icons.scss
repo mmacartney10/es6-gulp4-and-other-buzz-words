@@ -1,0 +1,10 @@
+// element - icons
+
+.icon {
+  font-size: 200%;
+
+  &:before {
+    content: '';
+    @include svg($name: 'icon--arrow');
+  }
+}

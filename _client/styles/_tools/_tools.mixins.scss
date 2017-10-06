@@ -1,0 +1,19 @@
+//Common Sass mixins
+
+@mixin respond-to-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-to-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin respond-min-max($width--min, $width--max) {
+  @media screen and (min-width: $width--min) and (max-width: $width--max) {
+    @content;
+  }
+}
