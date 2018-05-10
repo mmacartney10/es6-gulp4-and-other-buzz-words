@@ -8,22 +8,19 @@ import uglify from 'gulp-uglify';
 
 const isProd = (argv.prod || false);
 
-function vendorScripts() {
-  return gulp.src(config.vendorScriptFileList)
+function generateScript(source, fileName) {
+  return gulp.src(source)
     .pipe(gulpif(!isProd, sourcemaps.init()))
-    .pipe(concat('vendor.js'))
+    .pipe(concat(fileName))
     .pipe(gulpif(isProd, uglify()))
     .pipe(gulpif(!isProd, sourcemaps.write('.')))
     .pipe(gulp.dest(config.dest + config.scripts));
 }
 
-function mainScripts() {
-  return gulp.src(config.mainScriptFileList)
-    .pipe(gulpif(!isProd, sourcemaps.init()))
-    .pipe(concat('main.js'))
-    .pipe(gulpif(isProd, uglify()))
-    .pipe(gulpif(!isProd, sourcemaps.write('.')))
-    .pipe(gulp.dest(config.dest + config.scripts));
+export function vendorScripts() {
+  return generateScript(config.vendorScriptFileList, 'vendor.js');
 }
 
-export { vendorScripts, mainScripts }
+export function mainScripts() {
+  return generateScript(config.mainScriptFileList, 'main.js');
+}

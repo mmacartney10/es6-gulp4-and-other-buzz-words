@@ -1,5 +1,3 @@
-console.log('project-config');
-
 module.exports = {
   basePixel: 16,
   src: './_client/',
