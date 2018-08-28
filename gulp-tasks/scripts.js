@@ -24,3 +24,11 @@ export function vendorScripts() {
 export function mainScripts() {
   return generateScript(config.mainScriptFileList, 'main.js');
 }
+
+export function serviceWorkerScripts() {
+  return generateScript(config.serviceWorkerScriptFileList, 'service-worker.js');
+}
+
+export function serviceWorkerRegisterScripts() {
+  return generateScript(config.serviceWorkerRegisterScriptFileList, 'service-worker-register.js');
+}
