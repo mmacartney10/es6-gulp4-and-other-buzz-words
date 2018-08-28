@@ -1,7 +1,7 @@
 // elements - headings
 
 .heading {
-  font: $f-heading;
+  @include font-loaded($f-heading);
 
   @include respond-to-min($bp-small) {
     font-size: 22px;

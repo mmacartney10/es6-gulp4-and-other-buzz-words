@@ -1,5 +1,9 @@
 node_modules
-public
+public/fonts
+public/html
+public/images
+public/scripts
+public/styles
 _client/styles/main.scss
 .DS_Store
 *.log

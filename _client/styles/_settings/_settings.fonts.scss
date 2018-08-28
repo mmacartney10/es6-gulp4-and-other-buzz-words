@@ -10,7 +10,8 @@
        url('/fonts/HelveticaNeue.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+$f-default: sans-serif;
 $f-helvetica: 'HelveticaNeue', sans-serif;
 
-$f-heading: normal 700 16px/1.2 $f-helvetica;
-$f-body: normal 400 14px/1.4 $f-helvetica;
+$f-heading: normal 700 16px/1.2 $f-default;
+$f-body: normal 400 14px/1.4 $f-default;

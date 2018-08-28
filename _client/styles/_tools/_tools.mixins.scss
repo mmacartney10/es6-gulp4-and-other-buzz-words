@@ -17,3 +17,11 @@
     @content;
   }
 }
+
+@mixin font-loaded($fontName) {
+  font: $fontName;
+
+  .font-loaded & {
+    font-family: $f-helvetica;
+  }
+}

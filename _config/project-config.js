@@ -14,12 +14,6 @@ module.exports = {
   mainScriptFileList: [
     './_client/scripts/vendor/*.js'
   ],
-  serviceWorkerScriptFileList: [
-    './_client/scripts/service-worker/service-worker.js'
-  ],
-  serviceWorkerRegisterScriptFileList: [
-    './_client/scripts/service-worker/service-worker-register.js'
-  ],
   stylesSrc: [
     './_client/styles/_settings/*.scss',
     './_client/styles/_tools/*.scss',
