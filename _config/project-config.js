@@ -6,6 +6,7 @@ module.exports = {
   images: 'images/',
   scripts: 'scripts/',
   styles: 'styles/',
+  html: 'html/',
   fonts: 'fonts/',
   vendorScriptFileList: [
     './_client/scripts/src/*.js'

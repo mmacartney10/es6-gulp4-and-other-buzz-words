@@ -1,7 +1,7 @@
 **npm i** - too install dependencies
 
-**gulp** - build project
+**npm run build** - build project
 
-**gulp --prod** - build project with minification and no sourcemaps
+**npm run build-dev** - build project and watch files for changes
 
-**gulp dev** - build project and watch files for changes
+**npm run build-prod** - build project with minification and no sourcemaps

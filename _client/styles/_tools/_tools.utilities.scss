@@ -8,14 +8,12 @@
   position: absolute;
   width: 1px;
 
-  &.focusable {
-    &:focus {
-      clip: auto;
-      height: auto;
-      margin: 0;
-      overflow: visible;
-      position: static;
-      width: auto;
-    }
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
   }
 }

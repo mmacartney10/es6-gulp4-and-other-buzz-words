@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import path from 'path';
 import config from '../_config/project-config.js';
 import svgSprite from 'gulp-svg-sprite';
+import imagemin  from 'gulp-imagemin';
 
 const svgSpriteConfig = {
   svgSrc: config.src + config.images + 'svgs/*.svg',
@@ -51,4 +52,13 @@ export function svg() {
   return gulp.src(svgSpriteConfig.svgSrc)
     .pipe(svgSprite(svgSpriteConfig.settings)).on('error', function(error) { console.log(error); })
     .pipe(gulp.dest(svgSpriteConfig.outDir))
+}
+
+export function bitmap() {
+  return gulp.src(config.src + config.images + 'bitmap/*.{png,jpg}')
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe(gulp.dest(config.dest + config.images + 'bitmap/'));
 }

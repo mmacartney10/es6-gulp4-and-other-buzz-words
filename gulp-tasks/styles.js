@@ -10,14 +10,16 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import pxToRem from 'postcss-pxtorem';
-
 import postcssReporter from 'postcss-reporter';
 import stylelint from 'stylelint';
+import rename from 'gulp-rename';
+import wrapper from 'gulp-wrapper';
+import replace from 'gulp-replace';
 
 const isProd = (argv.prod || false);
 
 const postcssPlugins = [
-  autoprefixer({browsers: ['last 1 version']}),
+  autoprefixer({browsers: ['last 3 versions']}),
   pxToRem({rootValue: config.basePixel, replace: false}),
   stylelint(stylelintConfig),
   postcssReporter({clearReportedMessages: true})
@@ -40,4 +42,12 @@ export function styles() {
     .pipe(postcss(postcssPlugins))
     .pipe(gulpif(!isProd, sourcemaps.write('.')))
     .pipe(gulp.dest(config.dest + config.styles))
+}
+
+export function criticalStyles() {
+  return gulp.src(config.dest + config.styles + 'main.css')
+    .pipe(replace('@', '@@'))
+    .pipe(rename({extname: '.cshtml'}))
+    .pipe(wrapper({header: '<style id="critical-css">', footer: '</style>'}))
+    .pipe(gulp.dest(config.dest + config.html))
 }
